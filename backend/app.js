@@ -86,6 +86,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Temporary Seed Route
+app.get('/api/seed-db', async (req, res) => {
+  try {
+    const seedData = require('../database/seed/seed');
+    await seedData();
+    res.send('Database successfully seeded!');
+  } catch (err) {
+    res.status(500).send('Seed error: ' + err.message);
+  }
+});
+
 // --- Serve frontend in production ---
 if (process.env.NODE_ENV === 'production') {
   const frontendDist = path.join(__dirname, '..', 'frontend', 'dist');
