@@ -283,11 +283,11 @@ const seedData = async () => {
     console.log('Buyer 1: amit@shop.com / buyer123');
     console.log('Buyer 2: priya@store.com / buyer123');
 
-    process.exit(0);
+    return true;
   } catch (error) {
     console.error('Seed error:', error);
-    process.exit(1);
+    throw error;
   }
 };
 
-seedData();
+module.exports = seedData;
