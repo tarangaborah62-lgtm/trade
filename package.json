@@ -1,0 +1,12 @@
+{
+  "name": "tradebridge",
+  "version": "1.0.0",
+  "description": "TradeBridge B2B Marketplace",
+  "scripts": {
+    "start": "cd backend && node app.js",
+    "dev": "cd backend && npm run dev",
+    "build": "cd frontend && npm install && npm run build",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "seed": "cd backend && node ../database/seed/seed.js"
+  }
+}
